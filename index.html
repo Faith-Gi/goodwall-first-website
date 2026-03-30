@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Fun Coding Facts</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 20px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 8px #000;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 2px 2px 8px #000; }
+      to { text-shadow: 2px 2px 20px #ff6ec7; }
+    }
+
+    .facts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin-bottom: 40px;
+    }
+
+    .fact-card {
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .fact-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #ff6ec7, #7873f5);
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      transform: rotateY(180deg);
+    }
+
+    footer {
+      margin: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>💻 10 Fun Coding Facts</h1>
+  <div class="facts-container">
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 1</div>
+        <div class="card-back">The first computer bug was a real moth found in a Harvard Mark II computer in 1947.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 2</div>
+        <div class="card-back">The “Hello, World!” program became popular from Brian Kernighan’s book in 1972.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 3</div>
+        <div class="card-back">The first programmer was Ada Lovelace in the 1800s, working on Charles Babbage’s Analytical Engine.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 4</div>
+        <div class="card-back">The Python language was named after “Monty Python,” not the snake.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 5</div>
+        <div class="card-back">The first website ever created is still online: info.cern.ch.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 6</div>
+        <div class="card-back">There are over 700 programming languages in existence today.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 7</div>
+        <div class="card-back">The term “open source” was coined in 1998 to promote free software collaboration.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 8</div>
+        <div class="card-back">The first video game, “Spacewar!”, was created in 1962 by MIT students.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 9</div>
+        <div class="card-back">GitHub hosts over 200 million repositories, making it the largest code-sharing platform.</div>
+      </div>
+    </div>
+    <div class="fact-card">
+      <div class="card-inner">
+        <div class="card-front">Fact 10</div>
+        <div class="card-back">The longest piece of code ever written is the Google codebase, with billions of lines.</div>
+      </div>
+    </div>
+  </div>
+  <footer>Made with ❤️ using HTML, CSS & JS</footer>
+
+  <script>
+    // Add a fun interactive effect: random card glow on click
+    document.querySelectorAll('.fact-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.style.boxShadow = "0 0 25px #ff6ec7";
+        setTimeout(() => {
+          card.style.boxShadow = "none";
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
